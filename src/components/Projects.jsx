@@ -30,28 +30,20 @@ const Projects = () => {
   const handleScroll = () => {
     if (scrollRef.current && dotCount > 1) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      
-      // Jarak maksimum yang mentok bisa di-scroll ke kanan
       const maxScrollLeft = scrollWidth - clientWidth;
       
       if (maxScrollLeft > 0) {
-        // Mendapatkan rasio persentase scroll dari 0.0 (paling kiri) sampai 1.0 (paling kanan)
         const scrollPercentage = scrollLeft / maxScrollLeft;
-        
-        // Memetakan persentase tersebut ke jumlah dot yang ada
         const newIndex = Math.round(scrollPercentage * (dotCount - 1));
         setActiveIndex(newIndex);
       }
     }
   };
 
-  // Fungsi saat dot diklik agar scroll otomatis ke posisi yang tepat
   const scrollToPage = (index) => {
     if (scrollRef.current && dotCount > 1) {
       const { scrollWidth, clientWidth } = scrollRef.current;
       const maxScrollLeft = scrollWidth - clientWidth;
-      
-      // Menghitung titik target scroll berdasarkan dot yang ditekan
       const targetScrollLeft = (index / (dotCount - 1)) * maxScrollLeft;
       
       scrollRef.current.scrollTo({
@@ -107,12 +99,27 @@ const Projects = () => {
                 <h5 className="font-bold font-Inria text-xl sm:text-2xl text-dark_primary line-clamp-2">
                   {item.title}
                 </h5>
-                <p className="font-Poppins text-[0.95rem] text-slate-600 leading-relaxed mb-4 line-clamp-3">
+                <p className="font-Poppins text-[0.95rem] text-slate-600 leading-relaxed mb-3 line-clamp-3">
                   {item.desc}
                 </p>
                 
-                {/* Teks penanda link */}
-                <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-dark_primary font-bold font-Poppins text-sm">
+                {/* --- BAGIAN TAGAR DITAMBAHKAN DI SINI --- */}
+                {item.tags && item.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-4 mt-auto">
+                    {item.tags.map((tag, tagIndex) => (
+                      <span 
+                        key={tagIndex} 
+                        className="bg-slate-100 text-slate-600 border border-slate-200 text-[11px] sm:text-xs font-medium font-Poppins px-2.5 py-1 rounded-md"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {/* ---------------------------------------- */}
+
+                {/* Teks penanda link (didorong ke bawah dengan mt-auto jika tag tidak ada) */}
+                <div className={`pt-4 border-t border-slate-100 flex justify-between items-center text-dark_primary font-bold font-Poppins text-sm ${!item.tags && "mt-auto"}`}>
                   <span>View Project</span>
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
                     →
