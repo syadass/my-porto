@@ -39,8 +39,8 @@ const Hero = () => {
             <a href={myCV} download="CV_Syada_Saleha.pdf" className="btn inline-block">Download CV </a>
           </div>
 
-          {/* Bagian Konten Hero - Margin atas diseimbangkan */}
-          <div className="flex flex-col gap-12 mt-12 md:mt-16">
+          {/* Bagian Konten Hero - Gap diperkecil dari gap-12 menjadi gap-6 agar atas-bawahnya lebih rapat */}
+          <div className="flex flex-col gap-6 mt-6 md:mt-8">
             {hero.hero_content.map((content, i) => (
               <div
                 key={i}
@@ -49,7 +49,10 @@ const Hero = () => {
                 // Menghapus text-right agar tidak bentrok dengan justify
                 className={`flex items-center w-80 gap-6 ${i === 1 && " flex-row-reverse"}  `}
               >
-                <h3>{content.count}</h3>
+                {/* Bagian ini diperbesar dengan text-5xl (mobile) dan md:text-6xl (desktop) serta dibuat font-bold */}
+                <h3 className="text-5xl md:text-6xl font-bold text-dark_primary drop-shadow-sm">
+                  {content.count}
+                </h3>
                 
                 {/* Tambahkan class text-justify di sini */}
                 <p className="text-justify">{content.text}</p>

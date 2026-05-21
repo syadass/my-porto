@@ -57,19 +57,19 @@ export const content = {
     },
   ],
   hero: {
-    title: "Web Developer",
+    title: "Software Developer",
     firstName: "SYADA",
     LastName: "SALEHA, S.T.",
     btnText: "Hubungi Saya",
     image: Hero_person,
     hero_content: [
       {
-        count: "2+",
-        text: "Tahun Pengalaman di Organisasi & Proyek",
+        count: "3+",
+        text: "Proyek Utama Berbasis Web, Mobile & IoT",
       },
       {
-        count: "10+",
-        text: "Proyek & Acara yang Pernah Ditangani",
+        count: "3+",
+        text: "Tahun Pengalaman Organisasi & Pengembangan Software",
       },
     ],
   },
