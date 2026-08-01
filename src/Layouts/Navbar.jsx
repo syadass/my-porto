@@ -59,7 +59,7 @@ const Navbar = () => {
         
         {/* Bagian Kiri: Logo / Nama */}
         <a href="#home" className="text-2xl font-bold font-Paprika text-dark_primary">
-          Syada S.
+          Portofolio
         </a>
 
         {/* Bagian Kanan: Menu Navigasi Teks */}

@@ -29,10 +29,10 @@ const App = () => {
       
       {/* Service (About Me) sekarang di atas Skills */}
       <Service />
-      <Skills />
+      <Skills />   
       
-      <Projects />
       <Testimonials />
+      <Projects />
       <Hireme />
       <Contact />
       

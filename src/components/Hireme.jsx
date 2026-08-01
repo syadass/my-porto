@@ -4,14 +4,17 @@ const Hireme = () => {
   const { Hireme } = content;
 
   return (
-    <section className="bg-white" id="hireme">
+    <section className="bg-white scroll-mt-6" id="hireme">
+      {/* Tambahkan scroll-mt-24 di sebelah bg-white */}
+
       <div className="md:container px-5 py-14">
-        
+
         {/* Bagian Judul */}
         <div className="text-center mb-12">
           <h2 className="title" data-aos="fade-down">
             {Hireme.title}
           </h2>
+
           <h4 className="subtitle" data-aos="fade-down">
             {Hireme.subtitle}
           </h4>
@@ -43,19 +46,23 @@ const Hireme = () => {
                   />
                 </svg>
               </div>
-              
+
               {/* Bagian Kanan: Konten Teks */}
               <div className="flex flex-col justify-center flex-grow mt-2 sm:mt-0">
                 <h5 className="font-bold font-Poppins text-sm lg:text-base text-dark_primary leading-snug mb-1">
                   {award.name}
                 </h5>
-                
+
                 {/* Penyelenggara & Tahun sejajar */}
                 <div className="mt-1 leading-normal">
                   <span className="text-xs lg:text-sm font-semibold font-Poppins text-gray">
                     {award.issuer}
                   </span>
-                  <span className="text-gray/40 mx-2 hidden sm:inline-block">|</span>
+
+                  <span className="text-gray/40 mx-2 hidden sm:inline-block">
+                    |
+                  </span>
+
                   <span className="text-[11px] lg:text-xs font-medium font-Poppins text-gray/70 bg-white px-2 py-1 rounded-md inline-block whitespace-nowrap mt-1 lg:mt-0 shadow-sm">
                     {award.year}
                   </span>
@@ -64,7 +71,7 @@ const Hireme = () => {
             </div>
           ))}
         </div>
-        
+
       </div>
     </section>
   );

@@ -35,10 +35,12 @@ const Contact = () => {
   };
 
   return (
-    <section className="bg-dark_primary text-white" id="contact">
+    <section className="bg-dark_primary text-white scroll-mt-6" id="contact">
+      {/* Tambahkan scroll-mt-24 di sini agar tidak tertutup navbar */}
+
       {/* Container notifikasi toast */}
       <Toaster position="top-center" reverseOrder={false} />
-      
+
       <div className="md:container px-5 py-14">
         {/* Judul & Subjudul */}
         <h2 className="title !text-white" data-aos="fade-down">
@@ -65,7 +67,7 @@ const Contact = () => {
               required
               className="border border-white/20 p-4 rounded-lg bg-white/5 outline-none focus:border-accent transition-all duration-300 font-DMSans"
             />
-            
+
             {/* Input Email (user_email) */}
             <input
               type="email"
@@ -74,7 +76,7 @@ const Contact = () => {
               required
               className="border border-white/20 p-4 rounded-lg bg-white/5 outline-none focus:border-accent transition-all duration-300 font-DMSans"
             />
-            
+
             {/* Input Pesan (message) */}
             <textarea
               name="message"
@@ -82,7 +84,7 @@ const Contact = () => {
               required
               className="border border-white/20 p-4 rounded-lg bg-white/5 outline-none focus:border-accent transition-all duration-300 h-44 resize-none font-DMSans"
             ></textarea>
-            
+
             {/* Tombol Kirim */}
             <button
               type="submit"
@@ -105,12 +107,12 @@ const Contact = () => {
                 <div className="text-2xl w-12 h-12 flex items-center justify-center bg-white/10 rounded-full group-hover:bg-accent transition-all duration-300">
                   {createElement(item.icon)}
                 </div>
-                
+
                 {/* Link Teks */}
-                <a 
-                  className="font-Poppins text-lg text-white/80 hover:text-white transition-all duration-300" 
-                  href={item.link} 
-                  target="_blank" 
+                <a
+                  className="font-Poppins text-lg text-white/80 hover:text-white transition-all duration-300"
+                  href={item.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   {item.text}
